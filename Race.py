@@ -12,7 +12,7 @@ class Horse: #class of Horses
         self.x_position = 0
         self.y_position = y_pos
         self.window = window
-        self.image = Image(Point(self.x_position, self.y_position), image_file) # Create horse image
+        self.image = Image((self.x_position, self.y_position), image_file) # Create horse image
         self.image.draw(self.window)  # Draw horse in window
 
 
@@ -34,8 +34,8 @@ def main():
     win.setBackground('purple')
 
     # Set horse1,2
-    horse1 = Horse(6, 100, "Horse_1.gif", win)
-    horse2 = Horse(6, 150, "Horse_2.gif", win)
+    horse_1 = Horse(6, 100, "Horse_1.gif", win)
+    horse_2 = Horse(6, 150, "Horse_2.gif", win)
 
     # Draw finish line
     finish_line = Line(Point(650, 0), Point(650, 350))
@@ -48,21 +48,21 @@ def main():
 
     while not race_over:
 
-        horse1.move()
+        horse_1.move()
 
-        horse2.move()
+        horse_2.move()
 
         update(10)  # Refresh screen so movement is visible
 
-        if horse1.crossed_finish_line(650) and horse2.crossed_finish_line(650):
+        if horse_1.crossed_finish_line(650) and horse_2.crossed_finish_line(650):
                 race_over = True
                 print("Tie")
 
-        elif horse1.crossed_finish_line(650):
+        elif horse_1.crossed_finish_line(650):
                 race_over = True
                 print("!!!Horse 1 is the winner!!!")
 
-        elif horse2.crossed_finish_line(650):
+        elif horse_2.crossed_finish_line(650):
                 race_over = True
                 print("!!!Horse 2 is the winner!!!")
 
