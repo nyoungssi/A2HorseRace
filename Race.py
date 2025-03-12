@@ -6,13 +6,16 @@ from Dice import Dice
 
 class Horse: #class of Horses
 
-    def __init__(self, speed, y_pos, image_file, window):
+    def __init__(self, speed, y_pos, window):
         self.speed = speed
         self.dice = Dice(speed) #creat a dice object with given speed
         self.x_position = 0
         self.y_position = y_pos
         self.window = window
-        self.image = Image((self.x_position, self.y_position), image_file) # Create horse image
+        self.image= None
+
+    def set_image(self, image_file):
+        self.image = Image(Point(self.x_position, self.y_position), image_file)  # Set horse image
         self.image.draw(self.window)  # Draw horse in window
 
 
@@ -34,8 +37,12 @@ def main():
     win.setBackground('purple')
 
     # Set horse1,2
-    horse_1 = Horse(6, 100, "Horse_1.gif", win)
-    horse_2 = Horse(6, 150, "Horse_2.gif", win)
+    horse_1 = Horse(6, 100, win)
+    horse_2 = Horse(6, 150, win)
+
+    # Set horse images
+    horse_1.set_image("Horse_1.gif")
+    horse_2.set_image("Horse_2.gif")
 
     # Draw finish line
     finish_line = Line(Point(650, 0), Point(650, 350))
