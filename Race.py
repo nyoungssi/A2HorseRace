@@ -37,13 +37,13 @@ def main():
     win = GraphWin("Horse Race", 700, 350, autoflush=False)
     win.setBackground('purple')
 
-    # Set horse1,2
-    horse_1 = Horse(6, 100, win)
-    horse_2 = Horse(6, 150, win)
-
     # Set horse images
-    horse_1.set_image("Horse_1.gif")
-    horse_2.set_image("Horse_2.gif")
+    horse_1_image = Image(Point(0, 100), "Horse_1.gif")
+    horse_2_image = Image(Point(0, 150), "Horse_2.gif")
+
+    # Set horse1,2 with their images
+    horse_1 = Horse(6, 100, horse_1_image, win)
+    horse_2 = Horse(6, 150, horse_2_image, win)
 
     # Draw finish line
     finish_line = Line(Point(650, 0), Point(650, 350))
