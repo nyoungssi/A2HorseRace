@@ -6,13 +6,14 @@ from Dice import Dice
 
 class Horse: #class of Horses
 
-    def __init__(self, speed, y_pos, window):
+    def __init__(self, speed, y_pos, image, window):
         self.speed = speed
         self.dice = Dice(speed) #creat a dice object with given speed
         self.x_position = 0
         self.y_position = y_pos
         self.window = window
-        self.image= None
+        self.image= image
+        self.image.draw(self.window)
 
     def set_image(self, image_file):
         self.image = Image(Point(self.x_position, self.y_position), image_file)  # Set horse image
