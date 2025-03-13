@@ -12,12 +12,10 @@ class Horse: #class of Horses
         self.x_position = 0
         self.y_position = y_pos
         self.window = window
-        self.image= image
+        self.image = Image(Point(self.x_position + 25, self.y_position), image)
         self.image.draw(self.window)
 
-    def set_image(self, image_file):
-        self.image = Image(Point(self.x_position, self.y_position), image_file)  # Set horse image
-        self.image.draw(self.window)  # Draw horse in window
+
 
 
     def move(self):
@@ -38,8 +36,8 @@ def main():
     win.setBackground('purple')
 
     # Set horse images
-    horse_1_image = Image(Point(0, 100), "Horse_1.gif")
-    horse_2_image = Image(Point(0, 150), "Horse_2.gif")
+    horse_1_image = "Horse_1.gif"
+    horse_2_image = "Horse_2.gif"
 
     # Set horse1,2 with their images
     horse_1 = Horse(6, 100, horse_1_image, win)
