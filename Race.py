@@ -1,7 +1,7 @@
 # Comp 1020 A2 Horse Race
 # By Nayoung Lim u1542543
 
-from graphics import *
+from graphics import GraphWin,Line, Image, Point, update
 from Dice import Dice
 
 class Horse: #class of Horses
