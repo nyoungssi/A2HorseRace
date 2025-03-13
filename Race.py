@@ -16,8 +16,6 @@ class Horse: #class of Horses
         self.image.draw(self.window)
 
 
-
-
     def move(self):
         if not self.crossed_finish_line(650):
             roll = self.dice.roll()
